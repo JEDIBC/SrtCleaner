@@ -1,0 +1,34 @@
+{
+    "name"             : "JEDIBC/srtCleaner",
+    "description"      : "Clean orphaned SRT files",
+    "minimum-stability": "stable",
+    "license"          : "MIT",
+    "authors"          : [
+        {
+            "name" : "Bruno CHALOPIN",
+            "email": "bruno@chalopin.fr"
+        }
+    ],
+    "autoload"         : {
+        "psr-4"   : {
+            "SrtCleaner\\": "src/"
+        }
+    },
+    "autoload-dev"     : {
+        "psr-4": {
+            "Tests\\SrtCleaner\\": "tests/"
+        }
+    },
+    "require"          : {
+        "php"            : ">=5.6",
+        "symfony/console": "3.1.*",
+        "symfony/finder" : "3.1.*"
+    },
+    "require-dev"      : {
+        "phpunit/phpunit"      : "~5.4",
+        "mockery/mockery"      : "0.9.*",
+        "m6web/coke"           : "~2.1",
+        "mikey179/vfsStream"   : "~1.6",
+        "phpmetrics/phpmetrics": "~1.9"
+    }
+}
