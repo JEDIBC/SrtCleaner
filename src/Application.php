@@ -12,8 +12,7 @@ use Symfony\Component\Console\Input\InputInterface;
 class Application extends SymfonyApplication
 {
     /**
-     * Overridden so that the application doesn't expect the command
-     * name to be the first argument.
+     * {@inheritdoc}
      */
     public function getDefinition()
     {
@@ -25,11 +24,7 @@ class Application extends SymfonyApplication
     }
 
     /**
-     * Gets the name of the command based on input.
-     *
-     * @param InputInterface $input The input interface
-     *
-     * @return string The command name
+     * {@inheritdoc}
      */
     protected function getCommandName(InputInterface $input)
     {
@@ -38,9 +33,7 @@ class Application extends SymfonyApplication
     }
 
     /**
-     * Gets the default commands that should always be available.
-     *
-     * @return array An array of default Command instances
+     * {@inheritdoc}
      */
     protected function getDefaultCommands()
     {
@@ -48,7 +41,7 @@ class Application extends SymfonyApplication
         // which is used when using the --help option
         $defaultCommands = parent::getDefaultCommands();
 
-        $defaultCommands[] = new CleanCommand(new Cleaner(new FinderFactory()));
+        $defaultCommands[] = new CleanCommand();
 
         return $defaultCommands;
     }
